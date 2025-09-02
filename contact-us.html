@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kid Cubbies</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img id="siteLogo" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" />
+    </a>
+    <div class="nav-link-container">
+        <ul class="nav-links">
+            <li><a href="./families.html">Families</a></li>
+            <li><a href="./providers.html">Providers</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+             <li><a href="./daycare.html">DayCare</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
+            <div class="search-container">
+              <button class="icon-btn">
+                <svg width="24" height="24" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input type="text" class="search-input-nav" placeholder="Search..." />
+            </div>
+            <button class="icon-btn-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i data-lucide="sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-container">
+      <button class="icon-btn">
+          <a href="./explore.html">
+            <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </a>
+      </button>
+      <button class="icon-btn-toggle" id="menuOpen" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <ul class="mobile-menu-links">
+        <li><a href="./families.html">Families <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./providers.html">Providers <i style="opacity: 0.8; "data-lucide="chevron-right"></i></a></li>
+        <li><a href="./about-us.html">About <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./blog.html">Blog <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./contact-us.html">Contact <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <button class="icon-btn-toggle-mobile" id="themeToggleMobile" aria-label="Toggle Theme">
+            <i data-lucide="sun"></i>
+        </button>
+        <span id="themeText">Dark Mode</span>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-content">
+    <div class="modal-logo-section">
+      <img src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="modal-logo" id="modalLogo"/>
+     <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="login-family">Login as Family</button>
+      <button class="login-provider">Login as Provider</button>
+    </div>
+  </div>
+</div>
+
+<!--Contact us section-->
+<section class="featured-provider">
+  <div class="contact-container">
+    <form class="contact-form">
+      <h2><span class="highlight">Get In</span> Touch</h2>
+      <p class="description">Please fill the form below, and we will be happy to assist you</p>
+
+      <div class="name-fields">
+        <div>
+          <label class="input-labels">First Name</label>
+          <input type="text" placeholder="Enter name" />
+        </div>
+        <div>
+          <label class="input-labels">Last Name</label>
+          <input type="text" placeholder="Enter name" />
+        </div>
+      </div>
+
+      <label class="input-labels">Email Address</label>
+      <input type="email" placeholder="Enter email" />
+
+      <label class="input-labels">Subject</label>
+      <input type="text" placeholder="Enter subject" />
+
+      <label class="input-labels">Message</label>
+      <textarea placeholder="Type message..."></textarea>
+
+      <button type="submit" class="send-btn">Send Message</button>
+    </form>
+
+    <div class="contact-image">
+      <img class="desktop" src="./assets/icons/contact-girl copy.jpg" alt="Girl on phone" />
+      <img class="mobile" src="./assets/icons/contact-girl.jpg" alt="Girl on phone" />
+    </div>
+  </div>
+</section>
+
+ <!--Frequently Asked Questions-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/message-search.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Frequently Asked Questions</span>
+    </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What kind of daycare providers are on Kid Cubbies? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>We feature everything from in-home caregivers to full-service daycare centers. All providers are verified and can showcase their unique care styles. </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is Kid Cubbies free to use for families? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Yes, Kid Cubbies is completely free for families to explore providers and schedule tours.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How do I know a provider is trustworthy? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Each provider undergoes a verification process and can display reviews from other parents.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I schedule a tour before signing up? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Absolutely! You can schedule a tour with any provider through their profile page.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">I’m a provider — how do I join? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Click on the provider sign-up link and follow the onboarding process. It only takes a few minutes.</p>
+    </div>
+  </div>
+  <div class="more-questions">
+      <img src="./assets/icons/Frame 245.svg">
+      <div class="more-questions-options">
+        <h3>Still have questions?</h3>
+        <p>Can’t find the answer you’re looking for? Please reach out to our friendly team</p>
+      </div>
+  </div>
+
+  <div class="contact-details-container">
+    <div class="contact-details">
+      <img src="./assets/icons/telephone 1.svg">
+      <h3>Call Us</h3>
+      <p class="contact-days">Mon - Fri from 8am to 5pm</p>
+      <p class="contact-link">+16092228415</p>
+    </div>
+    <div class="contact-details">
+      <img src="./assets/icons/email 1.svg">
+      <h3>Send Email</h3>
+      <p class="contact-days">We are always available for you</p>
+      <p class="contact-link">support@kidscubbies.com</p>
+    </div>
+  </div>
+  </section>
+
+    
+<!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Quick Links <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Company <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section brand">
+      <div>
+        <img id="sitefotter" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="footer-logo" />
+        <p>In-home child care near you.</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Quick Links</p>
+      <ul>
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Company</p>
+      <ul>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kid Cubbies Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.mobile-select').forEach(footerBtn => {
+      footerBtn.addEventListener('click', () => {
+        const section = footerBtn.closest('.footer-section.mobile');
+        section.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

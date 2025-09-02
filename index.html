@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kid Cubbies</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preload" as="image" href="/assets/icons/rightImg.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img id="siteLogo" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" />
+    </a>
+    <div class="nav-link-container">
+        <ul class="nav-links">
+            <li><a href="./families.html">Families</a></li>
+            <li><a href="./providers.html">Providers</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+             <li><a href="./daycare.html">DayCare</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
+            <a href="./explore.html" class="search-container">
+              <button class="icon-btn">
+                <svg width="24" height="24" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input type="text" class="search-input-nav" placeholder="Search..." />
+            </a>
+            <button class="icon-btn-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i data-lucide="sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-container">
+      <button class="icon-btn">
+          <a href="./explore.html">
+            <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </a>
+      </button>
+      <button class="icon-btn-toggle" id="menuOpen" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <ul class="mobile-menu-links">
+        <li><a href="./families.html">Families <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./providers.html">Providers <i style="opacity: 0.8; "data-lucide="chevron-right"></i></a></li>
+        <li><a href="./about-us.html">About <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./blog.html">Blog <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./contact-us.html">Contact <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <button class="icon-btn-toggle-mobile" id="themeToggleMobile" aria-label="Toggle Theme">
+            <i data-lucide="sun"></i>
+        </button>
+        <span id="themeText">Dark Mode</span>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-content">
+    <div class="modal-logo-section">
+      <img src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="modal-logo" id="modalLogo"/>
+     <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="login-family">Login as Family</button>
+      <button class="login-provider">Login as Provider</button>
+    </div>
+  </div>
+</div>
+
+  <!--Daycare Hero section-->
+  <section class="hero">
+    <div class="hero-text">
+        <img src="./assets/icons/flower 1.svg" class="daycare-position1 resise">
+      <h1 class="hero-header">
+        Where <span class="green">Loving Daycare</span><br />
+        Meets <span class="pink">Happy Kids</span>
+        <span class="icon">
+            <img src="./assets/icons/magic-wand 1.png">
+        </span>
+      </h1>
+      <p>Trusted by parents, loved by kids — we bring together high-quality daycare options.</p>
+      <img src="./assets/icons/shape 1.svg" class="daycare-position2 resise">
+      <div class="search-box">
+        <div style="width: 60%; flex-direction: column; justify-content: space-between; display: flex;">
+            <span class='input-text-top'>Provider name, city or postal code</span>
+            <input type="text" placeholder="Ex: Nelly’s home, Ottawa, A1A, 1B1" style="border: none; outline: none;"/>
+        </div>
+        <button class="search-btn">Search</button>
+      </div>
+
+      <img src="./assets/icons/flower-shape 1.svg" class="daycare-position3 resise">
+      <img src="./assets/icons/smile 1.svg" class="daycare-position4 resise">
+    </div>
+    <div class="hero-images"></div>
+  </section>
+
+  <!--Featured Providers-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/star 1.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Featured Providers</span>
+    </div>
+    <div class="featured-parent-container">
+        <div class="featured-card">
+            <div class="small-card">
+                <i class="pin-icon" data-lucide="map-pin"></i>
+                <span class="location-text">Ottawa, Canada</span>
+            </div>
+            <img src="./assets/icons/teacher1.jpg" alt="" class="featured-card-image">
+            <p class="featured-title">Little Nest Daycare</p>
+            <p class="featured-desc">A cozy, home-based daycare offering hands-on Montessori activities.</p>
+            <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                <div class="tags-explore">2-5 Years</div>
+                <div class="tags-explore">⭐️ 4 stars</div>
+                <div class="tags-explore">150+ ratings</div>
+            </div>
+            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: auto;">$80/Day</h3>
+        </div>
+        <div class="featured-card">
+            <div class="small-card">
+                <i class="pin-icon" data-lucide="map-pin"></i>
+                <span class="location-text">Ottawa, Canada</span>
+            </div>
+            <img src="./assets/icons/teacher2.jpg" alt="" class="featured-card-image">
+            <p class="featured-title">Bright Minds Early Care</p>
+            <p class="featured-desc">Bright Minds blends structured early learning with nurturing care in a vibrant, safe environment.</p>
+            <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                <div class="tags-explore">3-7 Years</div>
+                <div class="tags-explore">⭐️ 4.5 stars</div>
+                <div class="tags-explore">250+ ratings</div>
+            </div>
+            <h3 style="font-size: 18px; font-weight: 700;">$85/Day</h3>
+        </div>
+        <div class="featured-card">
+            <div class="small-card">
+                <i class="pin-icon" data-lucide="map-pin"></i>
+                <span class="location-text">Ottawa, Canada</span>
+            </div>
+            <img src="./assets/icons/teacher3.jpg" alt="" class="featured-card-image">
+            <p class="featured-title">Happy Sprouts Academy</p>
+            <p class="featured-desc">Happy Sprouts is known for its fun-first approach — filled with music, art and sensory play.</p>
+            <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                <div class="tags-explore">2-5 Years</div>
+                <div class="tags-explore">⭐️ 4.8 stars</div>
+                <div class="tags-explore">300+ ratings</div>
+            </div>
+            <h3 style="font-size: 18px; font-weight: 700;">$90/Day</h3>
+        </div>
+    </div>
+  </section> 
+
+  <!--How it works-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/level-up 1.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">How it Works</span>
+    </div>
+
+    <div class="flex-some-bullshit">
+      <div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 5px; height: fit-content;">
+              <p class="works-title">Search For Providers</p>
+              <img class="works-title-image" src="./assets/icons/search-favorite.svg">
+          </div>
+          <p class="works-title-description">Check for available home childcare providers in your area that match your specific needs.</p>
+          <img src="./assets/images/left-mask.svg" style="width: 100%;">
+        </div>
+
+        <div class="works-section-left-2">
+            <img src="./assets/images/left-mask2.svg" style="width: 100%;">
+            <div style="display: flex; align-items: center; gap: 5px; height: fit-content;">
+                <p class="works-title">Signup & Onboard</p>
+                <img class="works-title-image" src="./assets/icons/add-user 1.svg">
+            </div>
+            <p class="works-title-description">If satisfied with your tour, register with the provider, make necessary payments and have your loved one taken care of.</p>
+        </div>
+      </div>
+      <div class="works-section-right">
+          <img src="./assets/images/right-mask.svg" style="width: 100%;">
+          <div style="display: flex; align-items: center; gap: 5px; height: fit-content;">
+              <p class="works-title">Tour Facilities</p>
+              <img class="works-title-image" src="./assets/icons/route 1.svg">
+          </div>
+          <p class="works-title-description">Schedule a physical or virtual tour of the home childcare facility.</p>
+      </div>
+    </div>
+
+    <img src="./assets/icons/up-connect.svg" class="up-connect">
+    <img src="./assets/icons/ok 1.svg" class="ok-connect">
+    <img src="./assets/icons/down-connect.svg" class="down-connect">
+    <img src="./assets/icons/smile 23.svg" class="smile-second">
+
+    
+  </section>
+
+  <!--What We Offer-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/repair-tool.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">What We Offer</span>
+    </div>
+
+    <div class="offers-container">
+        <div class="first-offer-card offer-card">
+            <p class="offer-card-title">Location-Based Search</p>
+            <p class="offer-card-desc">Quickly find childcare options near your home or workplace with our smart location filters.</p>
+            <div class="offers-card-image-container">
+                <img src="./assets/images/Frame 46.svg" style="max-width: 100%; margin-bottom: 32px;">
+            </div>
+        </div>
+        <div class="third-offer-card offer-card">
+            <p class="offer-card-title">Rich Provider Profiles</p>
+            <p class="offer-card-desc">Learn more before you commit. View detailed profiles with photos, care styles, availability, and ratings.</p>
+            <div class="offers-card-image-container">
+                <img src="./assets/images/Group 8.svg" style="max-width: 100%">
+            </div>
+        </div>
+        <div class="second-offer-card offer-card">
+            <p class="offer-card-title">Curated Daycare Listings</p>
+            <p class="offer-card-desc">Explore a handpicked selection of safe, nurturing daycare providers.</p>
+            <div class="offers-card-image-container">
+                <img src="./assets/images/Frame 45.svg" style="max-width: 100%; margin-bottom: -30px;">
+            </div>
+        </div>
+        <div class="forth-offer-card offer-card">
+            <p class="offer-card-title">Easy Signup & Onboarding</p>
+            <p class="offer-card-desc">Once you find the right fit, getting started is simple. Sign up and begin your journey.</p>
+            <div class="offers-card-image-container">
+                <img src="./assets/images/Frame 49.svg" style="max-width: 100%; margin-bottom: 32px;">
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!--Which best describes you?-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/user.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Which best describes you?</span>
+    </div>
+
+    <div class="best_describes_container">
+        <h1>Join as a <span style="color: #26A69A;">Family</span> or <span style="color: #F06292;">Provider</span> <img src="./assets/icons/starts/arrow-bottom.svg"></h1>
+        <p>Pick your role below and discover how Kid Cubbies can work for you.</p>
+
+        <div class="best_describes-image-wrapper">
+            <div class="image-btn-wrapper">
+                <img src="./assets/images/Group 39182.png">
+                <button class="cta-button-2">Join as Family <i class="fa-solid fa-chevron-right" style="margin-left: 10px;"></i></button>
+            </div>
+            <div class="image-btn-wrapper">
+                <img src="./assets/images/Group 39183.png">
+                <button class="cta-button-2">Join as Provider <i class="fa-solid fa-chevron-right" style="margin-left: 10px;"></i></button>
+            </div>
+        </div>
+
+        <!--Floating Icons-->
+        <img src="./assets/icons/starts/star.svg" class="float-icon">
+        <img src="./assets/icons/starts/star (1).svg" class="float-icon">
+        <img src="./assets/icons/starts/arrow-bottom (1).svg" class="float-icon">
+        <img src="./assets/icons/starts/star.svg" class="float-icon">
+        <img src="./assets/icons/starts/star (2).svg" class="float-icon">
+        <img src="./assets/icons/starts/arrow-bottom (2).svg" class="float-icon">
+        <img src="./assets/icons/starts/star (3).svg" class="float-icon">
+    </div>
+  </section>
+
+  <!--Blogs and Articles-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/note.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Blogs and Articles</span>
+    </div>
+
+    <div class="blog-section">
+        <div class="feature-card">
+            <img src="./assets/images/right-container.jpg" alt="Positive Discipline">
+            <div class="feature-card-text">
+                <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                <h3>Positive Discipline Techniques!</h3>
+            </div>
+        </div>
+
+        <div class="blog-cards">
+           <div class="top-blog-card">
+               <div class="blog-card blue">
+                  <div class="floeting-arrow">
+                      <img src="./assets/icons/Line arrow-up.svg">
+                  </div>
+                    <div>
+                        <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                        <h4>Why Social Play is Crucial in Early Childhood</h4>
+                        <p class="desc">Discover how unstructured play, group time, and silly games help children grow emotionally, mentally, and socially — and how good daycare supports this.</p>
+                    </div>
+                </div>
+
+                <div class="blog-card yellow">
+                    <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                    <h4>Bedtime Routine for Kids</h4>
+                    <img src="./assets/images/littlebaby.png" class="standard-size" alt="Sleeping child" />
+                </div>
+           </div>
+           <div class="bottom-blog-card">
+               <div class="blog-card purple">
+                    <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                    <h4>Social Play in Early Childhood</h4>
+                    <img src="./assets/images/social-mom.png" class="standard-size" alt="Kids playing" />
+                </div>
+
+                <div class="blog-card gray">
+                    <img src="./assets/images/bottomright.jpg" alt="Family bonding" class="family-bulder"/>
+                    <div class="floating-blog">
+                        <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                        <h4>Building strong relationships with kids</h4>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <div class="blog-cards-mobile">
+
+          <div class="mobile-grid-view">
+              <div class="blog-card purple">
+                  <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                  <h4 class="mobile-blog-card-title">Social Play in Early Childhood</h4>
+                  <img src="./assets/images/social-mom.png" class="standard-size" alt="Kids playing" />
+              </div>
+
+              <div class="blog-card yellow">
+                  <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                  <h4 class="mobile-blog-card-title">Bedtime Routine for Kids</h4>
+                  <img src="./assets/images/littlebaby.png" class="standard-size" alt="Sleeping child" />
+              </div>
+          </div>
+
+          <div class="mobile-list-column">
+              <div class="blog-card blue">
+                    <div class="floeting-arrow">
+                        <img src="./assets/icons/Line arrow-up.svg">
+                    </div>
+                    <div>
+                        <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                        <h4 class="mobile-blog-card-title">Why Social Play is Crucial in Early Childhood</h4>
+                        <p class="desc">Discover how unstructured play, group time, and silly games help children grow emotionally, mentally, and socially — and how good daycare supports this.</p>
+                    </div>
+                </div>
+
+              <div class="blog-card gray">
+                    <img src="./assets/images/bottomright.jpg" alt="Family bonding" class="family-bulder"/>
+                    <div class="floating-blog">
+                        <p class="meta">Category · Kids | <span>29 Feb, 2025</span></p>
+                        <h4 class="mobile-blog-card-title">Building strong relationships with kids</h4>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!--Customer reviews-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/star 1.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Customers’ Reviews</span>
+    </div>
+
+    <div class="review-container">
+        <div class="review-card">
+            <img src="./assets/images/user1.png" class="review-image">
+            <p class="review-text">"With Kid Cubbies, everything changed. I found a cozy in-home daycare just five minutes from home — and my daughter adores it!"</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: -10px;">
+                <div>
+                    <p class="review-text" style="font-weight: 600 !important; line-height: 100%;">Elena García</p>
+                    <p class="review-position">Mom of 1</p>
+                </div>
+                <p class="star-rating">⭐ 4.5</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <img src="./assets/images/user2.png" class="review-image">
+            <p class="review-text">"Listing my daycare on Kid Cubbies helped me connect with parents who value my approach. I’ve grown my business without stress or ads."</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: -10px;">
+                <div>
+                    <p class="review-text" style="font-weight: 600 !important; line-height: 100%;">Anya Novak</p>
+                    <p class="review-position">In-home Caregiver</p>
+                </div>
+                <p class="star-rating">⭐ 4.5</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <img src="./assets/images/user3.png" class="review-image">
+            <p class="review-text">"I loved being able to browse nearby daycares and schedule tours without dozens of phone calls. It felt like online dating, but for childcare."</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: -10px;">
+                <div>
+                    <p class="review-text" style="font-weight: 600 !important; line-height: 100%;">David Mark</p>
+                    <p class="review-position">Dad of twins</p>
+                </div>
+                <p class="star-rating">⭐ 4.5</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="customer-review-update">
+        <div class="customer-review-left">
+            <h2>Ready to Find the Perfect Daycare or Share Your Own?</h2>
+            <p class="sub-text">Join families and providers building trust and connection through Kid Cubbies.</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-number">1,000</p>
+                    <p class="stat-label">Families</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-number">1,500</p>
+                    <p class="stat-label">Providers</p>
+                </div>
+            </div>
+
+            <button class="cta-button">Join Now ! <i class="fa-solid fa-chevron-right" style="margin-left: 10px;"></i></button>
+        </div>
+
+        <img src="./assets/icons/flower 1.png" class="left-top-coner">
+        <img src="./assets/icons/flower 2.png" class="right-top-coner">
+        <img src="./assets/icons/flower-shape 1.png" class="left-bottom-coner">
+        <img src="./assets/icons/flower-shape 2.png" class="right-bottom-coner">
+
+        <div class="customer-review-right">
+            <img src="./assets/images/8be69cfb4fe1bccd92da79d27e7b323a5e89a450.png" alt="Family image">
+        </div>
+    </div>
+  </section>
+
+  <!--Frequently Asked Questions-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/message-search.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Frequently Asked Questions</span>
+    </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What kind of daycare providers are on Kid Cubbies? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>We feature everything from in-home caregivers to full-service daycare centers. All providers are verified and can showcase their unique care styles. </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is Kid Cubbies free to use for families? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Yes, Kid Cubbies is completely free for families to explore providers and schedule tours.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How do I know a provider is trustworthy? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Each provider undergoes a verification process and can display reviews from other parents.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I schedule a tour before signing up? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Absolutely! You can schedule a tour with any provider through their profile page.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">I’m a provider — how do I join? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Click on the provider sign-up link and follow the onboarding process. It only takes a few minutes.</p>
+    </div>
+  </div>
+  </section>
+
+  <!--Subscribe to email-->
+  <section class="featured-provider">
+    <div class="email-layout">
+        <h1 class="new-letter-title">Subscribe to Our Newsletter For Latest News and Updates</h1>
+        <p class="new-sub-title">Subscribe to our newsletter and we will send you latest blog posts and promotions </p>
+        <div class="email-input">
+            <input placeholder="Enter Email Address">
+            <button class="email-btn">Subscribe Now</button>
+        </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Quick Links <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Company <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section brand">
+      <div>
+        <img id="sitefotter" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="footer-logo" />
+        <p>In-home child care near you.</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Quick Links</p>
+      <ul>
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Company</p>
+      <ul>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kid Cubbies Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script defer src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.mobile-select').forEach(footerBtn => {
+      footerBtn.addEventListener('click', () => {
+        const section = footerBtn.closest('.footer-section.mobile');
+        section.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

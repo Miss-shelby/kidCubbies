@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kid Cubbies</title>
+  <link rel="stylesheet" href="css/styles.css" />
+   <link rel="stylesheet" href="css/families.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img id="siteLogo" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" />
+    </a>
+    <div class="nav-link-container">
+        <ul class="nav-links">
+            <li><a href="./families.html">Families</a></li>
+            <li><a href="./providers.html">Providers</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+             <li><a href="./daycare.html">DayCare</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
+            <div class="search-container">
+              <button class="icon-btn">
+                <svg width="24" height="24" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input type="text" class="search-input-nav" placeholder="Search..." />
+            </div>
+            <button class="icon-btn-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i data-lucide="sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-container">
+      <button class="icon-btn">
+          <a href="./explore.html">
+            <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </a>
+      </button>
+      <button class="icon-btn-toggle" id="menuOpen" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <ul class="mobile-menu-links">
+        <li><a href="./families.html">Families <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./providers.html">Providers <i style="opacity: 0.8; "data-lucide="chevron-right"></i></a></li>
+        <li><a href="./about-us.html">About <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./blog.html">Blog <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./contact-us.html">Contact <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <button class="icon-btn-toggle-mobile" id="themeToggleMobile" aria-label="Toggle Theme">
+            <i data-lucide="sun"></i>
+        </button>
+        <span id="themeText">Dark Mode</span>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-content">
+    <div class="modal-logo-section">
+      <img src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="modal-logo" id="modalLogo"/>
+     <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="login-family">Login as Family</button>
+      <button class="login-provider">Login as Provider</button>
+    </div>
+  </div>
+</div>
+
+<!--Why Families Love Kid Cubbies-->
+<section class="featured-provider">
+  <div class="about-hero-section">
+    <div class="about-hero-left">
+      <h2 class="about-hero-left-title">More Than <span style="color: #F06292;">Childcare</span>. A <span style="color: #26A69A;">Community</span> That Cares.<img src="./assets/icons/families/heart 1.svg" style="margin-bottom: -11px;"></h2>
+      <p class="about-hero-left-desc">At Kid Cubbies, we believe every child deserves care that feels like home. We connect families with trusted daycare providers who offer nurturing, joyful, and personalized environments where kids can thrive.</p>
+      <button class="cta-button-2 provider added-margin">Find Your Child's Happy Place</button>
+
+      <div class="about-hero-left-users">
+        <img class="user-avatar one" src="./assets/images/user1.png">
+        <img class="user-avatar two" src="./assets/images/user2.png">
+        <img class="user-avatar three" src="./assets/images/user3.png">
+        <img class="user-avatar four" src="./assets/images/user1.png">
+        <img class="star-img" src="./assets/icons/abouts/Star 2.svg">
+        <span class="circus">4.5 stars | <span class="inner-circus">50+ reviews</span></span>
+      </div>
+
+      <div class="about-hero-right-mobile">
+        <div class="square-border"></div>
+        <img src="./assets/icons/abouts/Vector 5.svg">
+        <div class="down-square-border"></div>
+      </div>
+
+      <img class="about-hero-left-lastImage" src="./assets/icons/abouts/therapy.jpg">
+    </div>
+    <div class="about-hero-right">
+      <div class="square-border"></div>
+      <img src="./assets/icons/abouts/Vector 5.svg">
+      <div class="down-square-border"></div>
+    </div>
+  </div>
+</section>
+
+<!--Who We Are-->
+<section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/user.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Who We Are</span>
+    </div>
+
+    <div class="who-we-are-box">
+      <div class="chart-container">
+        <div class="chart">
+          <h2>100%</h2>
+          <p>Visibility</p>
+          <div class="parent-chart one">
+            <div class="inner-chart one"></div>
+          </div>
+        </div>
+        <div class="chart">
+          <h2>100%</h2>
+          <p>Safe & verified</p>
+          <div class="parent-chart two">
+            <div class="inner-chart two"></div>
+          </div>
+        </div>
+        <div class="chart">
+          <h2>100%</h2>
+          <p>Parents’ trust</p>
+          <div class="parent-chart three">
+            <div class="inner-chart three"></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-description">
+        <p>Kid Cubbies is a platform built with families and childcare providers in mind. We understand that choosing the right care for your child is a big decision, and we’re here to make that process simpler, safer, and more personal.</p>
+        <p>Whether you're a parent looking for a cozy home daycare or a provider hoping to reach more families, Kid Cubbies is your space to connect, explore, and grow together.</p>
+      </div>
+    </div>
+</section>
+
+<!--Vision & Mission-->
+<section class="featured-provider">
+  <div class="mission-vision-container">
+    <div class="mission-vision">
+      <div class="mission">
+        <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+            <img src="./assets/icons/abouts/mission.svg" style="width: 24px; height: 24px;">
+            <span class="section-headings">Our Mission</span>
+        </div>
+        <p>To make high-quality, trusted home childcare accessible to every family by empowering providers and supporting parents through technology, connection, and care.</p>
+      </div>
+      <div class="vission">
+        <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+            <img src="./assets/icons/abouts/vision.svg" style="width: 24px; height: 24px;">
+            <span class="section-headings">Our Vision</span>
+        </div>
+        <p>A future where every child has access to a nurturing space to grow and every parent has peace of mind in their home childcare choices.</p>
+      </div>
+    </div>
+    <img class="mission-image" src="./assets/icons/abouts/missionary.svg">
+  </div>
+</section>
+
+<!--Why Families Love Kid Cubbies-->
+<section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/abouts/is-not-equal-to 1.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">What Makes Us Different</span>
+    </div>
+
+    <div class="familiesLove-card-container">
+      <div class="familiesLove-card">
+        <img src="./assets/icons/familiesdata/safety.svg">
+        <h2>Family-Centered Approach</h2>
+        <p>We prioritize what matters most to parents — trust, simplicity, and peace of mind — making the search for care easy and stress-free.</p>
+      </div>
+      
+      <div class="familiesLove-card">
+        <img src="./assets/icons/abouts/collaboration 1.svg">
+        <h2>Supportive to Providers</h2>
+        <p>Kid Cubbies empowers daycare owners with the tools and visibility they need to grow, connect, and thrive in their care journey.</p>
+      </div>
+      
+      <div class="familiesLove-card">
+        <img src="./assets/icons/abouts/verify 1.svg">
+        <h2>Verified & Safe</h2>
+        <p>All listed providers go through a careful vetting process, giving families confidence in the safety and quality of every match.</p>
+      </div>
+      
+      <div class="familiesLove-card">
+        <img src="./assets/icons/abouts/arrows 1.svg">
+        <h2>Flexible Options</h2>
+        <p>From home-based care to structured programs, families can explore a range of daycare types that suit their unique needs and schedules.</p>
+      </div>
+      
+      <div class="familiesLove-card">
+        <img src="./assets/icons/familiesdata/safety.svg">
+        <h2>Community-Driven</h2>
+        <p>We foster real relationships between families and caregivers, creating a supportive, trusted community for everyone involved.</p>
+      </div>
+      
+      <div class="familiesLove-card">
+        <img src="./assets/icons/abouts/simple 1.svg">
+        <h2>Simple, Modern Platform</h2>
+        <p>Our tech makes finding and managing care seamless — from smart filters to direct messaging and easy onboarding.</p>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="cta-button-extended">Get Started Now</button>
+    </div>
+</section>
+
+<!--Parent reviews-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/starown.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Testimonials</span>
+    </div>
+
+    <div class="review-container">
+        <div class="review-card">
+            <img src="./assets/images/user1.png" class="review-image">
+            <p class="review-text">"With Kid Cubbies, everything changed. I found a cozy in-home daycare just five minutes from home — and my daughter adores it!"</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: -10px;">
+                <div>
+                    <p class="review-text" style="font-weight: 600 !important; line-height: 100%;">Elena García</p>
+                    <p class="review-position">Mom of 1</p>
+                </div>
+                <p class="star-rating">⭐ 4.5</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <img src="./assets/images/user2.png" class="review-image">
+            <p class="review-text">"Listing my daycare on Kid Cubbies helped me connect with parents who value my approach. I’ve grown my business without stress or ads."</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: -10px;">
+                <div>
+                    <p class="review-text" style="font-weight: 600 !important; line-height: 100%;">Anya Novak</p>
+                    <p class="review-position">In-home Caregiver</p>
+                </div>
+                <p class="star-rating">⭐ 4.5</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <img src="./assets/images/user3.png" class="review-image">
+            <p class="review-text">"I loved being able to browse nearby daycares and schedule tours without dozens of phone calls. It felt like online dating, but for childcare."</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: -10px;">
+                <div>
+                    <p class="review-text" style="font-weight: 600 !important; line-height: 100%;">David Mark</p>
+                    <p class="review-position">Dad of twins</p>
+                </div>
+                <p class="star-rating">⭐ 4.5</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!--Frequently Asked Questions-->
+  <section class="featured-provider">
+    <div style="display: flex; align-items: center; background-color: #4DB6AC26; border-radius: 50px; width: fit-content; padding: 15px; gap: 6px;">
+        <img src="./assets/icons/message-search.svg" style="width: 24px; height: 24px;">
+        <span class="section-headings">Frequently Asked Questions</span>
+    </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What kind of daycare providers are on Kid Cubbies? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>We feature everything from in-home caregivers to full-service daycare centers. All providers are verified and can showcase their unique care styles. </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is Kid Cubbies free to use for families? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Yes, Kid Cubbies is completely free for families to explore providers and schedule tours.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How do I know a provider is trustworthy? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Each provider undergoes a verification process and can display reviews from other parents.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I schedule a tour before signing up? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Absolutely! You can schedule a tour with any provider through their profile page.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">I’m a provider — how do I join? <i data-lucide="chevron-down" class="faq-icon"></i></button>
+    <div class="faq-answer">
+      <p>Click on the provider sign-up link and follow the onboarding process. It only takes a few minutes.</p>
+    </div>
+  </div>
+
+  <div class="perfect-fit-section provider">
+    <h2>Join the Kid Cubbies Community</h2>
+    <p>Whether you're looking for care or providing it, Kid Cubbies is here to support you with tools, trust, and a touch of heart.</p>
+    <button class="cta-button-extended">Create My Profile</button>
+  </div>
+  </section>
+    
+<!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Quick Links <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Company <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section brand">
+      <div>
+        <img id="sitefotter" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="footer-logo" />
+        <p>In-home child care near you.</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Quick Links</p>
+      <ul>
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Company</p>
+      <ul>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kid Cubbies Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.mobile-select').forEach(footerBtn => {
+      footerBtn.addEventListener('click', () => {
+        const section = footerBtn.closest('.footer-section.mobile');
+        section.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

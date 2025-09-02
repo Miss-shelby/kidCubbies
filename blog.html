@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kid Cubbies</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img id="siteLogo" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" />
+    </a>
+    <div class="nav-link-container">
+        <ul class="nav-links">
+            <li><a href="./families.html">Families</a></li>
+            <li><a href="./providers.html">Providers</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+             <li><a href="./daycare.html">DayCare</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
+            <div class="search-container">
+              <button class="icon-btn">
+                <svg width="24" height="24" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input type="text" class="search-input-nav" placeholder="Search..." />
+            </div>
+            <button class="icon-btn-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i data-lucide="sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-container">
+      <button class="icon-btn">
+          <a href="./explore.html">
+            <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </a>
+      </button>
+      <button class="icon-btn-toggle" id="menuOpen" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <ul class="mobile-menu-links">
+        <li><a href="./families.html">Families <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./providers.html">Providers <i style="opacity: 0.8; "data-lucide="chevron-right"></i></a></li>
+        <li><a href="./about-us.html">About <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./blog.html">Blog <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./contact-us.html">Contact <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <button class="icon-btn-toggle-mobile" id="themeToggleMobile" aria-label="Toggle Theme">
+            <i data-lucide="sun"></i>
+        </button>
+        <span id="themeText">Dark Mode</span>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-content">
+    <div class="modal-logo-section">
+      <img src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="modal-logo" id="modalLogo"/>
+     <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="login-family">Login as Family</button>
+      <button class="login-provider">Login as Provider</button>
+    </div>
+  </div>
+</div>
+
+<section class="blog-provider">
+    <h1 class="blog-title">The <span style="color: #F06292;">Cubbie</span> Journal</h1>
+    <p class="blog-sub-title">From parenting tips and provider stories to early learning insights and daycare advice — the Cubbie Journal is your go-to space for everything childcare. Whether you’re a parent seeking guidance or a provider growing your business, we’re here to share, support, and inspire every step of the way.</p>
+
+    <div class="blog-container">
+        <div class="blog-category number-one">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Parenting Tips & Support</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Helping parents navigate the joys and challenges of raising little ones.</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/1.png">
+        </div>
+        <div class="blog-category number-two">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Voices from the Village</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Real stories and advice from parents, providers, and experts.</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/455.png">
+        </div>
+        <div class="blog-category number-three">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Creative Play & Activities</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Fun ideas that promote learning through play.</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/6.png">
+        </div>
+        <div class="blog-category number-four">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Choosing Childcare</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Empowering families to make informed, confident daycare choices.</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/23.png">
+        </div>
+        <div class="blog-category number-five">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Health & Safety</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Everything related to child wellness, safety standards, and care hygiene.</p>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+                <img class="featured-image" src="./assets/images/blog/u77.png">
+            </div>
+        </div>
+        <div class="blog-category number-six">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Kid Cubbies Community <br> & News</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Early Learning & Development</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/7.png">
+        </div>
+        <div class="blog-category number-seven">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Early Learning & <br> Development</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Support for early childhood education and growth.</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/3.png">
+        </div>
+        <div class="blog-category number-eight">
+            <div>
+                <div class="blog-category-details">
+                    <div class="blog-category-titles">
+                        <h2>Provider Resources</h2>
+                        <p>5 articles</p>
+                    </div>
+                    <img src="./assets/icons/arrow-right.svg">
+                </div>
+                <p class="blog-category-description">Practical tools and advice for caregivers on the platform.</p>
+            </div>
+            <img class="featured-image" src="./assets/images/blog/10.png">
+        </div>
+    </div>
+</section>
+    
+<!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Quick Links <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Company <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section brand">
+      <div>
+        <img id="sitefotter" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="footer-logo" />
+        <p>In-home child care near you.</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Quick Links</p>
+      <ul>
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Company</p>
+      <ul>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kid Cubbies Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.mobile-select').forEach(footerBtn => {
+      footerBtn.addEventListener('click', () => {
+        const section = footerBtn.closest('.footer-section.mobile');
+        section.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kid Cubbies</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preload" as="image" href="/assets/icons/rightImg.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img id="siteLogo" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" />
+    </a>
+    <div class="nav-link-container">
+        <ul class="nav-links">
+            <li><a href="./families.html">Families</a></li>
+            <li><a href="./providers.html">Providers</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+             <li><a href="./daycare.html">DayCare</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
+            <a href="" class="search-container">
+              <button class="icon-btn">
+                <svg width="24" height="24" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input type="text" class="search-input-nav" placeholder="Search..." />
+            </a>
+            <button class="icon-btn-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i data-lucide="sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-container">
+      <button class="icon-btn">
+          <a href="./explore.html">
+            <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </a>
+      </button>
+      <button class="icon-btn-toggle" id="menuOpen" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <ul class="mobile-menu-links">
+        <li><a href="./families.html">Families <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./providers.html">Providers <i style="opacity: 0.8; "data-lucide="chevron-right"></i></a></li>
+        <li><a href="./about-us.html">About <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./blog.html">Blog <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./contact-us.html">Contact <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <button class="icon-btn-toggle-mobile" id="themeToggleMobile" aria-label="Toggle Theme">
+            <i data-lucide="sun"></i>
+        </button>
+        <span id="themeText">Dark Mode</span>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-content">
+    <div class="modal-logo-section">
+      <img src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="modal-logo" id="modalLogo"/>
+     <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="login-family">Login as Family</button>
+      <button class="login-provider">Login as Provider</button>
+    </div>
+  </div>
+</div>
+
+<section class="featured-provider">
+    <h2 class="search-top-title">Find <span style="color: #FFA726;">Childcare</span> Near You</h2>
+    <div class="search-box explore">
+        <div style="width: 60%; flex-direction: column; justify-content: space-between; display: flex;">
+            <span class='input-text-top'>Search using provider name, city or postal code</span>
+            <input type="text" placeholder="Ex: Nelly’s home, Ottawa, A1A, 1B1" style="border: none; outline: none;"/>
+        </div>
+        <div class="right-filter">
+            <div class="filter-search">
+                <i data-lucide="sliders-horizontal" class="filter-icon"></i>
+                <p>Filters</p>
+            </div>
+            <button class="icon-btn explore">
+                <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-result-items">
+        <div class="search-result">
+            <div class="list-of-all-result-items">
+                <div class="featured-card explore">
+                    <div class="small-card-explore">
+                        <i class="pin-icon" data-lucide="map-pin"></i>
+                        <span class="location-text">Ottawa, Canada</span>
+                    </div>
+                    <img src="./assets/icons/teacher1.jpg" alt="" class="featured-card-image-explore">
+                    <p class="featured-title">Little Nest Daycare</p>
+                    <p class="featured-desc-explore">A cozy, home-based daycare offering hands-on Montessori activities.</p>
+                    <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                        <div class="tags-explore">2-5 Years</div>
+                        <div class="tags-explore">⭐️ 4 stars</div>
+                        <div class="tags-explore">150+ ratings</div>
+                    </div>
+                    <h3 style="font-size: 16px; font-weight: 700; margin-bottom: auto;">$80/Day</h3>
+                </div>
+                <div class="featured-card explore">
+                    <div class="small-card-explore">
+                        <i class="pin-icon" data-lucide="map-pin"></i>
+                        <span class="location-text">Ottawa, Canada</span>
+                    </div>
+                    <img src="./assets/icons/teacher2.jpg" alt="" class="featured-card-image-explore">
+                    <p class="featured-title">Bright Minds Early Care</p>
+                    <p class="featured-desc-explore">Bright Minds blends structured early learning with nurturing care in a vibrant, safe environment.</p>
+                    <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                        <div class="tags-explore">3-7 Years</div>
+                        <div class="tags-explore">⭐️ 4.5 stars</div>
+                        <div class="tags-explore">250+ ratings</div>
+                    </div>
+                    <h3 style="font-size: 16px; font-weight: 700;">$85/Day</h3>
+                </div>
+                <div class="featured-card explore">
+                    <div class="small-card-explore">
+                        <i class="pin-icon" data-lucide="map-pin"></i>
+                        <span class="location-text">Ottawa, Canada</span>
+                    </div>
+                    <img src="./assets/icons/teacher3.jpg" alt="" class="featured-card-image-explore">
+                    <p class="featured-title">Happy Sprouts Academy</p>
+                    <p class="featured-desc-explore">Happy Sprouts is known for its fun-first approach — filled with music, art and sensory play.</p>
+                    <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                        <div class="tags-explore">2-5 Years</div>
+                        <div class="tags-explore">⭐️ 4.8 stars</div>
+                        <div class="tags-explore">300+ ratings</div>
+                    </div>
+                    <h3 style="font-size: 16px; font-weight: 700;">$90/Day</h3>
+                </div>
+                <div class="featured-card explore">
+                    <div class="small-card-explore">
+                        <i class="pin-icon" data-lucide="map-pin"></i>
+                        <span class="location-text">Ottawa, Canada</span>
+                    </div>
+                    <img src="./assets/icons/teacher1.jpg" alt="" class="featured-card-image-explore">
+                    <p class="featured-title">Little Nest Daycare</p>
+                    <p class="featured-desc-explore">A cozy, home-based daycare offering hands-on Montessori activities.</p>
+                    <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                        <div class="tags-explore">2-5 Years</div>
+                        <div class="tags-explore">⭐️ 4 stars</div>
+                        <div class="tags-explore">150+ ratings</div>
+                    </div>
+                    <h3 style="font-size: 16px; font-weight: 700; margin-bottom: auto;">$80/Day</h3>
+                </div>
+                <div class="featured-card explore">
+                    <div class="small-card-explore">
+                        <i class="pin-icon" data-lucide="map-pin"></i>
+                        <span class="location-text">Ottawa, Canada</span>
+                    </div>
+                    <img src="./assets/icons/teacher2.jpg" alt="" class="featured-card-image-explore">
+                    <p class="featured-title">Bright Minds Early Care</p>
+                    <p class="featured-desc-explore">Bright Minds blends structured early learning with nurturing care in a vibrant, safe environment.</p>
+                    <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                        <div class="tags-explore">3-7 Years</div>
+                        <div class="tags-explore">⭐️ 4.5 stars</div>
+                        <div class="tags-explore">250+ ratings</div>
+                    </div>
+                    <h3 style="font-size: 16px; font-weight: 700;">$85/Day</h3>
+                </div>
+                <div class="featured-card explore">
+                    <div class="small-card-explore">
+                        <i class="pin-icon" data-lucide="map-pin"></i>
+                        <span class="location-text">Ottawa, Canada</span>
+                    </div>
+                    <img src="./assets/icons/teacher3.jpg" alt="" class="featured-card-image-explore">
+                    <p class="featured-title">Happy Sprouts Academy</p>
+                    <p class="featured-desc-explore">Happy Sprouts is known for its fun-first approach — filled with music, art and sensory play.</p>
+                    <div style="display: flex; gap: 15px; align-items: center; margin: 20px 0px;">
+                        <div class="tags-explore">2-5 Years</div>
+                        <div class="tags-explore">⭐️ 4.8 stars</div>
+                        <div class="tags-explore">300+ ratings</div>
+                    </div>
+                    <h3 style="font-size: 16px; font-weight: 700;">$90/Day</h3>
+                </div>
+            </div>
+        </div>
+        <div class="search-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126848.36063248856!2d3.325503!3d6.524379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf44e6971a9b3%3A0xc2b5d4aa71c8d3a3!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1660000000000"
+                width="100%"
+                class="map-view"
+                allowfullscreen=""
+                loading="lazy"
+            ></iframe>
+        </div>
+    </div>
+</section>
+
+<!--Modal Pops-->
+<div class="login-modal" id="exploreModal">
+  <div class="login-modal-content">
+    <div class="explore-logo-section">
+     <p class="filter-title">Filter</p>
+     <button class="modal-explore-close" id="closeExploreModal">&times;</button>
+    </div>
+    
+    <div class="formWrapper">
+      <label class="inputLabel">Select Your Area</label>
+      <select>
+        <option>Select area</option>
+        <option>Downtown</option>
+        <option>Uptown</option>
+        <option>Suburbs</option>
+      </select>
+
+      <div class="addedMargin">
+        <label class="inputLabel">Sort Results By</label>
+        <div class="rating-container">
+          <div class="all-rating">
+            <i class="fa-solid fa-star"></i>
+            <p class="ratingLabel">Highest Rated</p>
+          </div>
+          <div class="all-rating">
+            <i class="fa-solid fa-envelope-circle-check"></i>
+            <p class="ratingLabel">Most Reviewed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dating-time-container">
+         <div class="container">
+            <h2 class="inputLabel">Set Daily Rate</h2>
+
+           <div class="all-rating-slde">
+              <span><span id="minAge">$</span> 1</span>
+              <span class="to-text">to</span>
+              <span><span id="maxAge">$</span> 2,000</span>
+            </div>
+
+            <div class="slider-wrapper">
+              <div class="slider-track"></div>
+              <input type="range" id="minRange" min="0" max="100" value="2">
+              <input type="range" id="maxRange" min="0" max="100" value="60">
+            </div>
+          </div>
+
+         <div class="container">
+            <h2 class="inputLabel">Set Age Range</h2>
+
+            <div class="all-rating-slde">
+              <span><span id="minAge">2</span> months</span>
+              <span class="to-text">to</span>
+              <span><span id="maxAge">60</span> months</span>
+            </div>
+
+            <div class="slider-wrapper">
+              <div class="slider-track"></div>
+              <input type="range" id="minRange" min="0" max="100" value="2">
+              <input type="range" id="maxRange" min="0" max="100" value="60">
+            </div>
+          </div>
+      </div>
+
+      <div class="container">
+        <h2 class="inputLabel">Hours of Operation</h2>
+
+        <div class="all-rating-slde">
+          <span><span id="minAge">0:00</span>hrs</span>
+          <span class="to-text">to</span>
+          <span><span id="maxAge">24:00</span>hrs</span>
+        </div>
+
+        <div class="slider-wrapper">
+          <div class="slider-track"></div>
+          <input type="range" id="minRange" min="0" max="100" value="2">
+          <input type="range" id="maxRange" min="0" max="100" value="60">
+        </div>
+      </div>
+
+
+      <div class="dateFlexer">
+        <div>
+          <h2 class="inputLabel">Pick Availability</h2>
+          <label>From:</label>
+          <input type="date" class="dateSelector">
+        </div>
+        <div class="secondDate">
+          <h2 class="inputLabel">Pick Availability</h2>
+          <label>To:</label>
+          <input type="date" class="dateSelector">
+        </div>
+      </div>
+
+      <div>
+        <h2 class="inputLabel">Select Special Programs</h2>
+        <div class="main-container-switch">
+          <div class="switch-container">
+            <div class="switch">
+              <input type="checkbox" id="toggleSwitch">
+              <label for="toggleSwitch"></label>
+            </div>
+            <span class="switch-label">Potty training not required</span>
+          </div>
+          <div class="switch-container">
+            <div class="switch">
+              <input type="checkbox" id="toggleSwitch">
+              <label for="toggleSwitch"></label>
+            </div>
+            <span class="switch-label">RECE Licensed Provider</span>
+          </div>
+          <div class="switch-container">
+            <div class="switch">
+              <input type="checkbox" id="toggleSwitch">
+              <label for="toggleSwitch"></label>
+            </div>
+            <span class="switch-label">Licensed Daycare</span>
+          </div>
+          <div class="switch-container">
+            <div class="switch">
+              <input type="checkbox" id="toggleSwitch">
+              <label for="toggleSwitch"></label>
+            </div>
+            <span class="switch-label">Offers subsidized care</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+        <button class="reset">Reset</button>
+        <button class="apply">Apply Filters</button>
+    </div>
+  </div>
+</div>
+    
+<!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Quick Links <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Company <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section brand">
+      <div>
+        <img id="sitefotter" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="footer-logo" />
+        <p>In-home child care near you.</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Quick Links</p>
+      <ul>
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Company</p>
+      <ul>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kid Cubbies Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.mobile-select').forEach(footerBtn => {
+      footerBtn.addEventListener('click', () => {
+        const section = footerBtn.closest('.footer-section.mobile');
+        section.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

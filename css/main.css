@@ -1,0 +1,492 @@
+:root {
+  --bg-color: #FFF8F2;
+  --text-color: #333333;
+  --reverse-text-color:#fafafa;
+  --text-color-sec: #666666;
+  --accent-color: #f5a623;
+  --button-bg: #F57C00;
+  --icon-button: #1a1a1a;
+  --nav-bg: #ffffff;
+  --footer-bg: #f9f9f9;
+  --footer-border: #e0e0e0;
+  --social-bg: #1a1a1a;
+  --social-icon: #ffffff;
+  --section-color: #ECECEC;
+  --section-color-sec: #FFFFFF;
+  --card-bg: url('../assets/images/bg-card-light.png');
+  --card-color-sec: #ffffff;
+}
+
+html[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #fafafa;
+  --reverse-text-color: #333333;
+  --text-color-sec: #BBBBBB;
+  --nav-bg: #181818;
+  --footer-bg: #181818;
+  --button-bg: #f5a623;
+  --card-bg: url('../assets/images/bg-card.png');
+  --footer-border: #333333;
+  --social-bg: #ffffff;
+  --icon-button: #f5a623;
+  --social-icon: #000000;
+  --section-color: #2E2E2E;
+  --section-color-sec: #2E2E2E;
+  --card-color-sec: #2A2A2A
+}
+
+.more-questions{
+    border: 1px solid #DDDDDD;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    padding: 41px 34px;
+    gap: 34px;
+}
+
+.more-questions img{
+    width: 80px;
+    height: 80px;
+    border: 100%;
+}
+
+.more-questions .more-questions-options h3, .contact-details-container .contact-details h3{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.more-questions .more-questions-options p, .contact-days{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.contact-details{
+    background: var(--section-color);
+    border-radius: 42.11px;
+    padding: 48px 39px;
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    flex-direction: column;
+}
+
+.contact-details img{
+    width: 45px;
+    height: 45px;
+}
+
+.contact-link{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 100%;
+    text-decoration: underline;
+}
+
+.contact-details-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    margin-top: 70px;
+}
+
+.contact-container {
+  display: flex;
+  align-items: stretch;
+  gap: 31px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.contact-image .mobile {
+  display: none;
+}
+
+.contact-image .desktop {
+  display: block;
+}
+
+.contact-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.contact-form h2 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'Baloo 2';
+  line-height: 38px;
+  margin-bottom: 14px;
+}
+
+.contact-form .description{
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.contact-form .highlight {
+  color: #00b894;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap; /* Stay side by side */
+  overflow-x: auto;  /* Prevent breaking layout */
+}
+
+.name-fields > div {
+  flex: 1 1 0;
+  min-width: 0; /* Important to allow shrinking properly */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-labels {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 100%;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--section-color);
+  color: var(--text-color);
+  border: 1px solid #DDDDDD;
+  border-radius: 16px;
+  padding: 28px 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-image{
+    flex: 1
+}
+
+.send-btn {
+  padding: 22px 12px;
+  background-color: orange;
+  border: none;
+  border-radius: 12px;
+  color: var(--bg-color);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 45px;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+.review-btn{
+   padding: 22px 12px;
+  background-color: #F57C00;
+  border: none;
+  border-radius: 12px;
+  color: var(--bg-color);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 45px;
+  font-size: 18px;
+  transition: background 0.3s ease;
+  width: 50%;
+}
+
+.send-btn:hover {
+  background-color: #ff9500;
+}
+
+.right-filter{
+  display: flex; align-items: center; gap: 22px
+}
+
+.filter-search{
+  background: var(--bg-color);
+  width: 140px;
+  height: 70px;
+  border-radius: 12px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.search-top-title{
+  font-size: 45px;
+  font-weight: 600;
+  font-family: 'Baloo 2';
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.search-box.explore{
+  background-color: var(--section-color);
+  width: 97% !important;
+  padding: 20px;
+}
+
+.icon-btn.explore{
+  background-color: #ff9500;
+  color: var(--reverse-text-color);
+}
+
+.search-result-items{
+  display: flex;
+  margin-top: 45px;
+  gap: 10px;
+}
+
+.search-result{
+  width: 75%;
+}
+
+.list-of-all-result-items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.search-map{
+  width: 24%;
+  position: sticky;
+  top: 10%;
+  height: fit-content;
+}
+
+.featured-card.explore{
+  width: 90% !important;
+  max-width: 416px;
+  height: 457px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.featured-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.map-view{
+  border:0; 
+  border-radius: 30px;
+  height: 450px;
+}
+
+.dating-time-container{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 20px;
+}
+
+@media (max-width: 820px) {
+.filter-search{
+  width: 78px;
+  font-size: 12px;
+  height: 40px;
+  gap: 4px;
+}
+.dating-time-container{
+  gap: 10px;
+}
+.featured-card.explore{
+  width: 94% !important;
+  height: fit-content !important;
+}
+.list-of-all-result-items{
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 24px;
+}
+.map-view{
+  height: 222px;
+}
+.icon-btn.explore{
+  width: 40px;
+  height: 40px;
+}
+.search-top-title{
+  font-size: 24px;
+}
+.search-result-items{
+  margin-top: 25px;
+  flex-direction: column-reverse;
+}
+.search-box.explore{
+  width: 93% !important;
+  padding: 14px;
+}
+.search-result{
+  width: 100%;
+}
+.search-map{
+  width: 100%;
+  position: relative;
+  top: 0%;
+}
+.right-filter{
+  gap: 14px
+}
+.contact-container {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column-reverse;
+  gap: 16px;
+}
+.contact-form h2 {
+  font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 1px;
+}
+.contact-form .description{
+  font-size: 14px;
+  margin-right: 30%;
+  margin-top: auto;
+}
+.contact-form input,
+.contact-form textarea {
+  border-radius: 14px;
+  padding: 20px 10px;
+}
+.input-labels {
+  font-size: 16px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+.send-btn {
+  padding: 20px 12px;
+  font-size: 15px;
+}
+.contact-image .mobile {
+  display: block;
+}
+
+.contact-image .desktop {
+  display: none;
+}
+.review-btn{
+   padding: 15px 12px;
+  background-color: #F57C00;
+  margin-top: 35px;
+  font-size: 16px;
+  width: 100%;
+}
+}
+
+
+@media  (max-width: 820px) {
+.more-questions{
+    border-radius: 8px;
+    margin-top: 45px;
+    padding: 27px 20px;
+    gap: 10px;
+}
+
+.more-questions img{
+    width: 45px;
+    height: 45px;
+}
+
+.more-questions .more-questions-options h3{
+    font-size: 16px;
+    margin: auto;
+}
+
+.more-questions .more-questions-options p{
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: auto;
+}
+.contact-details-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.contact-details{
+    border-radius: 16px;
+    padding: 18px 15px;
+    gap: 20px;
+}
+.contact-details img{
+    width: 24px;
+    height: 24px;
+}
+.contact-details-container .contact-details h3{
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.contact-days{
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.contact-link{
+    font-size: 18px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+}
+
+@media (max-width: 414px) {
+.featured-card.explore{
+  width: 100% !important;
+  height: fit-content !important;
+}
+
+.right-filter{
+  gap: 7px
+}
+
+.icon-btn.explore{
+  width: 30px;
+  height: 30px;
+}
+
+.icon-btn .search-icon {
+  font-size: 16px;
+}
+
+.sliders-horizontal{
+  font-size: 14px;
+  width: 10px;
+  height: 10px;
+}
+}
+
+@media (max-width: 414px) {
+.right-filter{
+  gap: 5px
+}
+
+.icon-btn.explore{
+  width: 25px;
+  height: 25px;
+}
+
+.sliders-horizontal{
+  font-size: 14px;
+  width: 10px;
+  height: 10px;
+}
+
+.filter-search{
+  width: 68px;
+  font-size: 10px;
+  height: 30px;
+}
+}

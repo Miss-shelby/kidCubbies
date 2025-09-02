@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kid Cubbies</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preload" as="image" href="/assets/icons/rightImg.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <img id="siteLogo" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" />
+    </a>
+    <div class="nav-link-container">
+        <ul class="nav-links">
+            <li><a href="./families.html">Families</a></li>
+            <li><a href="./providers.html">Providers</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+             <li><a href="./daycare.html">DayCare</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn">Login</button>
+            <a href="./explore.html" class="search-container">
+              <button class="icon-btn">
+                <svg width="24" height="24" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input type="text" class="search-input-nav" placeholder="Search..." />
+            </a>
+            <button class="icon-btn-toggle" id="themeToggle" aria-label="Toggle Theme">
+                <i data-lucide="sun"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-container">
+      <button class="icon-btn">
+          <a href="./explore.html">
+            <svg width="22" height="22" class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.9304 20.6898C19.4604 22.2898 20.6704 22.4498 21.6004 21.0498C22.4504 19.7698 21.8904 18.7198 20.3504 18.7198C19.2104 18.7098 18.5704 19.5998 18.9304 20.6898Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </a>
+      </button>
+      <button class="icon-btn-toggle" id="menuOpen" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <ul class="mobile-menu-links">
+        <li><a href="./families.html">Families <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./providers.html">Providers <i style="opacity: 0.8; "data-lucide="chevron-right"></i></a></li>
+        <li><a href="./about-us.html">About <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./blog.html">Blog <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+        <li><a href="./contact-us.html">Contact <i style="opacity: 0.8;" data-lucide="chevron-right"></i></a></li>
+      </ul>
+
+      <div class="dark-mode-toggle">
+        <button class="icon-btn-toggle-mobile" id="themeToggleMobile" aria-label="Toggle Theme">
+            <i data-lucide="sun"></i>
+        </button>
+        <span id="themeText">Dark Mode</span>
+      </div>
+
+      <button class="login-btn">Login</button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-content">
+    <div class="modal-logo-section">
+      <img src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="modal-logo" id="modalLogo"/>
+     <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="login-family">Login as Family</button>
+      <button class="login-provider">Login as Provider</button>
+    </div>
+  </div>
+</div>
+
+
+<section class="featured-provider">
+    <div class="privacy-title">
+        <h2>Terms & Conditions</h2>
+        <p><span>Last Updated:</span> June 07, 2025</p>
+    </div>
+
+    <div class="privacy-container">
+        <!-- Sidebar -->
+    <aside class="privacy-sidebar">
+        <ul>
+        <li><a href="#definitions">1. Definitions</a>
+          <ul>
+            <li><a href="#kid-cubbies">1.1. Kid Cubbies</a></li>
+            <li><a href="#services">1.2. Services</a></li>
+            <li><a href="#user">1.3. User</a></li>
+            <li><a href="#daycare">1.4. Daycare Provider</a></li>
+            <li><a href="#parent">1.5. Parent</a></li>
+            <li><a href="#account">1.6. Account</a></li>
+            <li><a href="#content">1.7. Content</a></li>
+            <li><a href="#terms">1.8. Terms</a></li>
+            <li><a href="#privacy">1.9. Privacy Policy</a></li>
+          </ul>
+        </li>
+        <li><a href="#acceptance">2. Acceptance of Terms</a></li>
+        <li><a href="#scope">3. Scope of Kid Cubbies' Services</a></li>
+        <li><a href="#user-accounts">4. User Accounts</a></li>
+        <li><a href="#proprietary">5. Proprietary rights to content</a></li>
+        <li><a href="#use-of-services">6. Use of Services</a></li>
+        <li><a href="#warranty">7. Disclaimer of Warranties</a></li>
+        <li><a href="#liability">8. Limitation of Liability</a></li>
+        <li><a href="#cookies">9. Cookies Policy</a></li>
+        <li><a href="#changes">10. Changes to Terms</a></li>
+        <li><a href="#law">11. Governing Law</a></li>
+        <li><a href="#contact">12. Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content -->
+    <main class="privacy-content">
+        <nav class="breadcrumb">Home <span>› Terms & Conditions</span></nav>
+
+        <h1 class="main-titles">Terms of Use</h1>
+        <p class="main-description">Welcome to Kid Cubbies! These Terms of Use are the rules that govern your access to and use of our platform, Kid Cubbies, which may also be referred to as "the Company," "the Services," "Our," or "Us". By accessing or using our website, you agree to comply with these terms and conditions. These Terms encompass the guidelines outlined in this document, along with those detailed in the Privacy Policy. If you do not agree with any part of these terms, please do not access or use our website.</p>
+
+        <h2 class="main-titles" id="definitions">Definitions</h2>
+        <h3 id="kid-cubbies">Kid Cubbies: <span class="main-description">Refers to the online platform and services provided by Kid Cubbies, which enable daycare providers to showcase their services and parents to search for childcare options.</span></h3>
+
+        <h3 id="services">Services: <span class="main-description">Refers to the features, functionalities, and resources provided by Kid Cubbies through its website and any associated applications.</span></h3>
+
+        <h3 id="user">User: <span class="main-description">Any individual who accesses or uses the Kid Cubbies platform and services, including both daycare providers and parents seeking childcare options.</span></h3>
+
+        <h3 id="daycare">Daycare Provider:  <span class="main-description">An individual or entity offering childcare services, including but not limited to in-home daycare providers, daycare centers, preschools, and other childcare facilities.</span></h3>
+
+        <h3 id="parent">Parent: <span class="main-description">An individual seeking childcare services for their child(ren) through the Kid Cubbies platform. Includes guardians and other childcare seekers.</span></h3>
+
+        <h3 id="account">Account: <span class="main-description">Refers to the online platform and services provided by Kid Cubbies, which enable daycare providers to showcase their services and parents to search for childcare options.</span></h3>
+
+        <h3 id="content">Content: <span class="main-description">Refers to the online platform and services provided by Kid Cubbies, which enable daycare providers to showcase their services and parents to search for childcare options.</span></h3>
+
+        <h3 id="terms">Terms: <span class="main-description">Refers to the online platform and services provided by Kid Cubbies, which enable daycare providers to showcase their services and parents to search for childcare options.</span></h3>
+
+        <h3 id="privacy">Privacy: <span class="main-description">Refers to the online platform and services provided by Kid Cubbies, which enable daycare providers to showcase their services and parents to search for childcare options.</span></h3>
+
+        <h2 class="main-titles" id="acceptance">Acceptance of Terms</h2>
+        <p class="main-description">By accessing or using the Kid Cubbies website, you agree to be bound by these Terms of Use, our Privacy Policy, and any other policies or guidelines posted on our website. These terms constitute a legally binding agreement between you and Kid Cubbies.</p>
+
+        <h2 class="main-titles" id="scope">Scope of Kid Cubbies' Services</h2>
+        <p class="main-description">‐ Kid Cubbies is a platform that enables parents to connect with childcare providers with the purpose of finding childcare for their child(ren).
+            <br><br>‐ Kid Cubbies enables childcare providers to list their service on our platform and parents to search for these services based on a number of filters or criteria.
+            <br><br>‐ Unregistered users of Kid Cubbies are welcome to browse any listing on our site. However, to access certain features such as viewing provider contact details, messaging providers or parents, and creating a listing, you will need to create an account.
+            <br><br>‐ Although Kid Cubbies is a place for parents and child care providers to connect, Kid Cubbies is not in the business of providing childcare services.
+            <br><br>‐ Kid Cubbies is not a party to the relationship formed between parents and the childcare provider. Childcare providers listed on our site are not employees or contractors of Kid Cubbies.
+            <br><br>‐ Kid Cubbies does not set the prices or schedule for the providers listed on our site. The providers are solely responsible for setting these.
+            <br><br>‐ When parents enroll their child(ren) with a provider’s daycare listed on our site, they are entering into a contract with that provider directly and Kid Cubbies is not a part of that contract.
+            <br><br>‐ Kid Cubbies does not endorse any specific childcare provider or listing on our platform. Users should always do their due diligence when selecting childcare services or interacting with others on our platform.
+            <br><br>‐ It's important to note that Kid Cubbies does verify the accuracy of the information provided by users, although we may conduct checks for identity verification. However, this doesn't mean we endorse any user or their credentials.</p>
+
+        <h2 class="main-titles" id="user-accounts">User Accounts</h2>
+        <p class="main-description">In order to access certain features of our website, you may be required to create a user account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to provide accurate and up-to-date information when creating your account and to keep your account information accurate and up to date after account creation. You also agree to notify us promptly of any unauthorized use of your account. Kid Cubbies is not responsible or liable for any losses by any party caused by unauthorized use of your account.</p>
+    </main>
+    </div>
+</section>
+
+ <!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Quick Links <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section mobile">
+      <p class="footer-sub-header mobile-select nav">Company <i data-lucide="chevron-down" class="footer-icon"></i></p>
+      <ul class="toggle-content">
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section brand">
+      <div>
+        <img id="sitefotter" src="./assets/icons/logo.svg" alt="Kid Cubbies Logo" class="footer-logo" />
+        <p>In-home child care near you.</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Quick Links</p>
+      <ul>
+        <li><a href="./providers.html">Providers</a></li>
+        <li><a href="./families.html">Families</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section desktop">
+      <p class="footer-sub-header nav">Company</p>
+      <ul>
+        <li><a href="./about-us.html">About Us</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kid Cubbies Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.mobile-select').forEach(footerBtn => {
+      footerBtn.addEventListener('click', () => {
+        const section = footerBtn.closest('.footer-section.mobile');
+        section.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
