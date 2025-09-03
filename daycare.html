@@ -107,32 +107,32 @@
             <button><span><img class="w-3 h-5 save" src="./assets/icons/save-instagram (2) 1.png"/></span>Save</button>
         </div>
       </div>
-      <div class="daycare-hero-smalltext  mt-4 xl:mt-0 hidden sm:flex flex flex-col  sm:gap-0 !items-start sm:flex-row sm:items-center ">
+      <div class="daycare-hero-smalltext  mt-4 xl:mt-0 hidden sm:flex flex flex-col gap-4  sm:gap-0  sm:flex-row sm:items-center ">
         <p class="flex items-center right_border">
             <img  src="./assets/icons/location-pin 1.png" alt="location icon" class="w-4 h-4 mr-1 location"/>
             Ottawa, Canada
         </p>
 
-        <p class="flex items-center right_border">
+        <p class="flex items-center right_border ml-4">
              ⭐️ 4 stars
         </p>
 
-        <p class="flex items-center right_border">
+        <p class="flex items-center ml-4 right_border">
             150+ ratings
         </p>
 
-        <p class="flex items-center right_border">
+        <p class="flex items-center right_border ml-4">
             License Status: <span class="bold-text ml-1"> Approved</span>
         </p>
 
-        <p class="flex items-center">
+        <p class="flex items-center ml-4">
             Availability: <span class="bold-text ml-1"> Currently available for intakes</span>
         </p>
     </div>
      <div class="daycare-hero-smalltext sm:hidden  !items-start  ">
         <p class="flex items-center ">
             <img  src="./assets/icons/location-pin 1.png" alt="location icon" class="w-4 h-4 mr-1 location"/>
-            Ottawa, Canada <span class="right_border"></span> <span class="">   ⭐️ 4 stars </span> <span class="right_border"></span> <span class="">150+ ratings</span>
+            Ottawa, Canada <span class="right_border"></span> <span class="ml-2">   ⭐️ 4 stars </span> <span class="right_border"></span> <span class="ml-2">150+ ratings</span>
         </p>
         <p class="flex items-center pt-[10px]">
             License Status: <span class="bold-text ml-1"> Approved</span>
@@ -611,6 +611,8 @@
     flatpickr("#datepicker", {
       inline: true,    // Show calendar directly
       defaultDate: "today",
+      showMonths: 1, 
+      showDaysInNextAndPreviousMonths: false,
     });
   </script>
   <script defer src="js/main.js"></script>
