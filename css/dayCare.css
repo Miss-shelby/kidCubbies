@@ -585,7 +585,7 @@ html[data-theme='dark'] {
          padding: 8px 10px;
     }
     .daycare-hero-smalltext{
-        gap: 4px !important;
+        gap: 10px !important;
         margin-top: 20px !important;
     }
     .daycare-description-row{
