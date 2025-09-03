@@ -585,8 +585,12 @@ html[data-theme='dark'] {
          padding: 8px 10px;
     }
     .daycare-hero-smalltext{
-        gap: 10px !important;
+  
         margin-top: 20px !important;
+    }
+     .daycare-hero-smalltext p{
+  
+        margin-top: 4px !important;
     }
     .daycare-description-row{
         flex-direction: column;
