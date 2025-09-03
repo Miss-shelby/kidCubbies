@@ -483,8 +483,8 @@ html[data-theme='dark'] {
       border-radius: 50%;
     }
     .flatpickr-day.selected {
-      background: #333333 !important;
-      color: white !important;
+      background: var(--text-color) !important;
+      color: var(--bg-color) !important;
       border-radius: 50%;
       border: none !important;
     }
@@ -586,11 +586,12 @@ html[data-theme='dark'] {
     }
     .daycare-hero-smalltext{
   
-        margin-top: 10px !important;
+        margin: 16px 0px !important;
+        gap: 0px !important;
     }
      .daycare-hero-smalltext p{
   
-        margin-top: 4px !important;
+        /* margin-top: 4px !important; */
     }
     .daycare-description-row{
         flex-direction: column;
@@ -650,6 +651,12 @@ html[data-theme='dark'] {
   line-height: 100%; 
  
 }
+.flatpickr-current-month .flatpickr-monthDropdown-months{
+  font-size: 18px !important;
+}
+.flatpickr-current-month input.cur-year{
+  font-size: 18px !important;
+}
 }
 @media (max-width:1070px) {
   .features-btn{
@@ -662,8 +669,8 @@ html[data-theme='dark'] {
     .review-title{
       font-size: 16px;
     }
-    .prev, .next {
+    /* .prev, .next {
     padding: 8px 15px;
     font-size: 16px;
-  }
+  } */
 }
